@@ -3,7 +3,8 @@ require_relative 'lib/00_tree_node.rb'
 
 class KnightsPathFinder
 
-  attr_reader :move_tree, :start_pos, :visited_pos
+  attr_reader :move_tree, :start_pos, :visited_positions
+
 
   def self.build_move_tree
   end
@@ -33,7 +34,6 @@ class KnightsPathFinder
     root = PolyTreeNode.new(@start_pos)
     queue = [root]
     until queue.empty?
-      # debugger
       new_move_positions(queue.first.value).each do |new_pos|
         child = PolyTreeNode.new(new_pos)
         child.parent = root
