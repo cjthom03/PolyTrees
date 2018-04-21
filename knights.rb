@@ -36,7 +36,7 @@ class KnightsPathFinder
     until queue.empty?
       new_move_positions(queue.first.value).each do |new_pos|
         child = PolyTreeNode.new(new_pos)
-        child.parent = root
+        child.parent = queue.first
         queue << child
       end
       queue.shift
